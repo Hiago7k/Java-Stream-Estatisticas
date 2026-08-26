@@ -25,8 +25,20 @@ class Main{
 
         Map<Integer, List<String>> agrupamento = palavras.stream()
                         .collect(Collectors.groupingBy(String::length));
-        
-        System.out.println(agrupamento);
+
+       // System.out.println(agrupamento);
+
+        /*
+        3 - Dada a lista de nomes abaixo,
+          concatene-os separados por vírgula.
+          No código a seguir, há um exemplo prático do resultado esperado.
+          // Resultado Esperado: "Alice, Bob, Charlie"
+         */
+        List<String> nomes = Arrays.asList("Alice", "Bob", "Charlie");
+
+        nomes.stream()
+                .forEach(System.out::println);
+
 
 
     }
