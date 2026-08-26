@@ -35,9 +35,9 @@ class Main{
           // Resultado Esperado: "Alice, Bob, Charlie"
          */
         List<String> nomes = Arrays.asList("Alice", "Bob", "Charlie");
-
-        nomes.stream()
-                .forEach(System.out::println);
+            String resultado =  nomes.stream()
+                        .collect(Collectors.joining(", "));
+        System.out.println(resultado);
 
 
 
