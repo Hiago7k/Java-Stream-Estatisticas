@@ -1,8 +1,7 @@
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
+
 
 class Main{
     public static void main(String[] args){
@@ -24,12 +23,10 @@ class Main{
        */
         List<String> palavras = Arrays.asList("java", "stream", "lambda", "code");
 
-        Map<Integer, String> stringsAgrupadas = palavras.stream()
-                .collect(Collectors.toCollection(palavras::getClass,
-                        Collectors.averagingDouble(palavras::sort)));
-
-
-        System.out.println(stringsAgrupadas);
+        Map<Integer, List<String>> agrupamento = palavras.stream()
+                        .collect(Collectors.groupingBy(String::length));
+        
+        System.out.println(agrupamento);
 
 
     }
