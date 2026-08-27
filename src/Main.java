@@ -58,8 +58,8 @@ class Main{
                Map<Boolean, List<Integer>> separando = numeros3.stream()
                 .collect(Collectors.partitioningBy(n -> n % 2 == 0));
 
-        System.out.println("Pares " + separando.get(true));
-        System.out.println("Imapres " + separando.get(false));
+       // System.out.println("Pares " + separando.get(true));
+       // System.out.println("Imapres " + separando.get(false));
 
     }
 }
