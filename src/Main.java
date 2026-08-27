@@ -37,9 +37,16 @@ class Main{
         List<String> nomes = Arrays.asList("Alice", "Bob", "Charlie");
             String resultado =  nomes.stream()
                         .collect(Collectors.joining(", "));
-        System.out.println(resultado);
+       // System.out.println(resultado);
 
-
+        /*
+        4 - Dada a lista de números inteiros abaixo,
+         calcule a soma dos quadrados dos números pares.
+         */
+        List<Integer> numeros2 = Arrays.asList(1, 2, 3, 4, 5, 6);
+        numeros2.stream()
+                .filter(n -> n % 2 == 0)
+                .forEach(System.out::println);
 
     }
 }
