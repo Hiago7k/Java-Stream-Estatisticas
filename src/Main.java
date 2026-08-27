@@ -90,7 +90,13 @@ class Main{
         Map<String, Long> relatorioQuantidade = produtos.
                  stream()
                 .collect(Collectors.groupingBy(Produto::getCategoria, Collectors.counting()));
-        System.out.println(relatorioQuantidade);
+    //    System.out.println(relatorioQuantidade);
+
+        
+        Map<String, Optional<Produto>> produtoMaisCaro  = produtos.stream()
+                .collect(Collectors.groupingBy(Produto::getCategoria,
+                        Collectors.maxBy(Comparator.comparingDouble(Produto::getPreco))));
+        System.out.println(produtoMaisCaro);
 
     }
 }
