@@ -92,11 +92,16 @@ class Main{
                 .collect(Collectors.groupingBy(Produto::getCategoria, Collectors.counting()));
     //    System.out.println(relatorioQuantidade);
 
-        
+
         Map<String, Optional<Produto>> produtoMaisCaro  = produtos.stream()
                 .collect(Collectors.groupingBy(Produto::getCategoria,
                         Collectors.maxBy(Comparator.comparingDouble(Produto::getPreco))));
         System.out.println(produtoMaisCaro);
 
+
+       Map<String, Double> somaTotalDosProdutos = produtos.stream()
+               .collect(Collectors.groupingBy(Produto::getCategoria,
+                       Collectors.summingDouble(Produto::getPreco)));
+        System.out.println(somaTotalDosProdutos);
     }
 }
