@@ -80,7 +80,13 @@ class Main{
                 .filter(p -> p.getCategoria().equals("Eletrônicos"))
                .collect(Collectors.toList());
 
-        relatorio.forEach(System.out::println);
+      //  relatorio.forEach(System.out::println);
+
+        Map<String, List<Produto>> relatorioComposto = produtos
+                .stream()
+                .collect(Collectors.groupingBy(Produto::getCategoria));
+
+        System.out.println(relatorioComposto);
 
     }
 }
