@@ -46,6 +46,7 @@ class Main{
         List<Integer> numeros2 = Arrays.asList(1, 2, 3, 4, 5, 6);
         DoubleSummaryStatistics esta = (DoubleSummaryStatistics) numeros2.stream()
                 .filter(n -> n % 2 == 0)
+                .map(n -> n * n)
                         .collect(Collectors.summarizingDouble(Integer::longValue));
         System.out.println(esta.getSum());
 
