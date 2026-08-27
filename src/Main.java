@@ -74,5 +74,13 @@ class Main{
                 new Produto("Monitor", 900.0, "Eletrônicos"),
                 new Produto("Mesa", 700.0, "Móveis")
         );
+
+       List<Produto> relatorio = produtos.stream()
+                .filter(p -> p.getPreco() < 1000)
+                .filter(p -> p.getCategoria().equals("Eletrônicos"))
+               .collect(Collectors.toList());
+
+        relatorio.forEach(System.out::println);
+
     }
 }
