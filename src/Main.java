@@ -86,7 +86,11 @@ class Main{
                 .stream()
                 .collect(Collectors.groupingBy(Produto::getCategoria));
 
-        System.out.println(relatorioComposto);
+     //   System.out.println(relatorioComposto);
+        Map<String, Long> relatorioQuantidade = produtos.
+                 stream()
+                .collect(Collectors.groupingBy(Produto::getCategoria, Collectors.counting()));
+        System.out.println(relatorioQuantidade);
 
     }
 }
