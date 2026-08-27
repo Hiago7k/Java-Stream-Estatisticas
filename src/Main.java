@@ -48,8 +48,18 @@ class Main{
                 .filter(n -> n % 2 == 0)
                 .map(n -> n * n)
                         .collect(Collectors.summarizingDouble(Integer::longValue));
-        System.out.println(esta.getSum());
+      //  System.out.println(esta.getSum());
 
+
+        /*
+        5 - Dada uma lista de números inteiros, separe os números pares dos ímpares.
+        */
+        List<Integer> numeros3 = Arrays.asList(1, 2, 3, 4, 5, 6);
+               Map<Boolean, List<Integer>> separando = numeros3.stream()
+                .collect(Collectors.partitioningBy(n -> n % 2 == 0));
+
+        System.out.println("Pares " + separando.get(true));
+        System.out.println("Imapres " + separando.get(false));
 
     }
 }
